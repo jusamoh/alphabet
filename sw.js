@@ -6,6 +6,7 @@ const CACHE_FILES = [
     '/js/app.js',
     '/js/drawing.js',
     '/images/alphabet-guide.png'
+    '/offline.html'
 ];
 
 // 설치 단계: 초기 리소스 캐싱
