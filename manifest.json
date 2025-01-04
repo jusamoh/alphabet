@@ -1,7 +1,7 @@
 {
     "name": "Alphabet Practice",
     "short_name": "Alphabet",
-    "start_url": "/",
+    "start_url": "/alphabet/",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#000000",
