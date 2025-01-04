@@ -26,16 +26,26 @@
     </div>
     <script>
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/sw.js')
+            navigator.serviceWorker.register('/alphabet/sw.js')
                 .then(registration => {
                     console.log('Service Worker 등록 성공:', registration.scope);
                 })
                 .catch(error => {
-                    console.log('Service Worker 등록 실패:', error);
+                    console.error('Service Worker 등록 실패:', error);
+                    console.error('에러 상세:', error.message);
                 });
+        } else {
+            console.error('Service Worker를 지원하지 않는 브라우저입니다.');
         }
     </script>
     <script src="js/drawing.js"></script>
     <script src="js/app.js"></script>
+    <script>
+        navigator.serviceWorker.getRegistrations().then(function(registrations) {
+            for(let registration of registrations) {
+                registration.unregister();
+            }
+        });
+    </script>
 </body>
 </html> 
