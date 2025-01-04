@@ -1,10 +1,10 @@
 {
     "name": "Alphabet Practice",
-    "short_name": "AlphaPractice",
+    "short_name": "Alphabet",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#ffffff",
-    "theme_color": "#4CAF50",
+    "theme_color": "#000000",
     "icons": [
         {
             "src": "icons/icon-192x192.png",

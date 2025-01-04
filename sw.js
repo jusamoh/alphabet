@@ -21,6 +21,7 @@ self.addEventListener('install', event => {
         console.error('캐시 설치 중 오류:', error);
       })
   );
+  console.log('Service Worker 설치됨, 스코프:', self.registration.scope);
 });
 
 // 활성화 단계: 이전 캐시 정리
