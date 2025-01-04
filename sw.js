@@ -5,17 +5,21 @@ const CACHE_FILES = [
     '/css/style.css',
     '/js/app.js',
     '/js/drawing.js',
-    '/images/alphabet-guide.png'
+    '/images/alphabet-guide.png',
     '/offline.html'
 ];
 
 // 설치 단계: 초기 리소스 캐싱
 self.addEventListener('install', event => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then(cache => {
-      console.log('캐시 열림');
-      return cache.addAll(urlsToCache);
-    })
+    caches.open(CACHE_NAME)
+      .then(cache => {
+        console.log('캐시 열림');
+        return cache.addAll(CACHE_FILES);
+      })
+      .catch(error => {
+        console.error('캐시 설치 중 오류:', error);
+      })
   );
 });
 
