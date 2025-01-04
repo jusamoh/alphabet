@@ -26,22 +26,15 @@
     </div>
     <script>
         if ('serviceWorker' in navigator) {
-            const swPath = window.location.pathname.includes('/alphabet') 
-                ? './sw.js'  // 로컬 테스트용
-                : '/alphabet/sw.js';  // GitHub Pages용
-
-            navigator.serviceWorker.register(swPath, {
-                scope: window.location.pathname.includes('/alphabet') 
-                    ? './'  // 로컬 테스트용
-                    : '/alphabet/'  // GitHub Pages용
+            navigator.serviceWorker.register('/alphabet/sw.js', {
+                scope: '/alphabet/'  // 스코프를 명시적으로 설정
             })
             .then(registration => {
                 console.log('Service Worker 등록 성공:', registration.scope);
             })
             .catch(error => {
                 console.error('Service Worker 등록 실패:', error);
-                console.error('현재 경로:', window.location.pathname);
-                console.error('에러 상세:', error.message);
+                console.error('현재 경로:', window.location.href);
             });
         } else {
             console.error('Service Worker를 지원하지 않는 브라우저입니다.');
