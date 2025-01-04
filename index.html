@@ -26,8 +26,8 @@
     </div>
     <script>
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/alphabet/sw.js', {
-                scope: '/alphabet/'
+            navigator.serviceWorker.register('./sw.js', {
+                scope: './'
             })
             .then(registration => {
                 console.log('Service Worker 등록 성공:', registration.scope);
